@@ -19,6 +19,7 @@ public class TipsFragment extends Fragment {
 
     private WebView myWebView;
     private String url = "http://www.who.int/topics/nutrition/es/";
+//    private String url = "https://www.youtube.com/watch?v=StkLx0e4f6c";
     private WebSettings myWebSettings;
 
     public TipsFragment() {
