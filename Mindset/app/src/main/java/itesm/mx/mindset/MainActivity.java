@@ -18,9 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    public static final boolean flag = true;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -62,13 +60,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, EventActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-
     }
 
 
