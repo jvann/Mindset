@@ -1,6 +1,8 @@
 package itesm.mx.mindset;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +16,7 @@ import android.widget.ImageView;
 public class RestFragment extends Fragment {
 
 //    public static final String DEVELOPER_KEY = "AIzaSyAy0CvwCL4O1yHH682zdFQBX2Z3gWra6kI";
-//    public ImageView ytMed;
+    public ImageView ivMed;
 
     public RestFragment() {
         // Required empty public constructor
@@ -29,10 +31,14 @@ public class RestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_rest, container, false);
 
-//        ytMed = (ImageView) container.findViewById(R.id.image_meditation);
+        ivMed = (ImageView) rootView.findViewById(R.id.image_meditation);
+        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.samplemeditation);
+        image = Bitmap.createScaledBitmap(image, 200, 200, true);
+        ivMed.setImageBitmap(image);
 
-        return inflater.inflate(R.layout.fragment_rest, container, false);
+        return rootView;
     }
 }
 

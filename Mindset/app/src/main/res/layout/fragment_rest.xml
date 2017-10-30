@@ -15,22 +15,23 @@
         <TextClock
             android:id="@+id/textClock"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="1"
+            android:layout_height="156dp"
             android:paddingTop="60dp"
             android:textAlignment="center"
             android:textSize="50sp"
             android:textStyle="bold|italic"
+            android:textColor="#3c4951"
             app:layout_constraintBaseline_creator="14"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="27dp" />
 
-        <!--<ImageView-->
-            <!--android:id="@+id/image_meditation"-->
-            <!--android:layout_width="363dp"-->
-            <!--android:layout_height="328dp"-->
-            <!--android:paddingLeft="15dp"-->
-            <!--app:srcCompat="@drawable/meditation" />-->
+        <ImageView
+            android:id="@+id/image_meditation"
+            android:layout_width="match_parent"
+            android:layout_height="268dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:srcCompat="@drawable/samplemeditation" />
     </LinearLayout>
 
 </FrameLayout>
