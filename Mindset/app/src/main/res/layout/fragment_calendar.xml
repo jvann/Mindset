@@ -10,23 +10,27 @@
         android:orientation="vertical"
         android:background="#FFFFFF">
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<CalendarView-->
+            <!--android:id="@+id/calendarView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
-        <TextView
-            android:id="@+id/textView"
+        <!--<TextView-->
+            <!--android:id="@+id/textView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:background="#fce8f4"-->
+            <!--android:fontFamily="sans-serif"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:text="Clase de Emprendimiento"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="#3c4951"-->
+            <!--android:textSize="22sp"-->
+            <!--android:textStyle="bold" />-->
+        <ListView
+            android:id="@+id/list_events"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#fce8f4"
-            android:fontFamily="sans-serif"
-            android:paddingTop="10dp"
-            android:text="Clase de Emprendimiento"
-            android:textAlignment="center"
-            android:textColor="#3c4951"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </FrameLayout>
