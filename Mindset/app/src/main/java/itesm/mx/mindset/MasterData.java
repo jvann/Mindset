@@ -56,6 +56,12 @@ public class MasterData {
         listEvents.add(event);
         event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
         listEvents.add(event);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        listEvents.add(event);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        listEvents.add(event);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        listEvents.add(event);
     }
 
     public ArrayList<Event> getAllEvents () {

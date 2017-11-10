@@ -12,13 +12,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClickedListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
     public static final boolean flag = true;
+    private static String DEBUG_TAG = "MAIN_ACTIVITY";
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -92,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onEventSelected(int position) {
+        Log.d(DEBUG_TAG, "Position Event: " + position);
+
+        Intent intent = new Intent(MainActivity.this, EventDetail.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
+    }
     /**
      * A placeholder fragment containing a simple view.
      */
