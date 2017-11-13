@@ -31,12 +31,15 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tv_name_event);
         TextView tvDate = (TextView) convertView.findViewById(R.id.text_dateEvent);
-        ImageView ivImageEvent = (ImageView) convertView.findViewById(R.id.image_event);
 
         Event event = getItem(position);
         tvName.setText(event.getName());
         tvDate.setText(event.getDate());
-        ivImageEvent.setImageResource(MasterData.getInstance().getEvent(MasterData.getInstance().getEvent(event.getName())).getPicture());
+
+        if (event.getCompleted()){
+            ImageView ivImageEvent = (ImageView) convertView.findViewById(R.id.image_event);
+            ivImageEvent.setImageResource(R.mipmap.ic_check_circle_black_24dp);
+        }
 
         return convertView;
     }

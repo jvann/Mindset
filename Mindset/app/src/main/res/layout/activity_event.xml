@@ -44,49 +44,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RadioGroup
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_hours"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="5dp"
+                android:text="   Duración:"
+                android:textAlignment="viewStart"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Horas"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_description"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/button"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:checked="false"
-                android:paddingLeft="10dp"
-                android:text="Me gustaria"
-                android:textAlignment="viewStart"
-                android:textColor="#3c4951"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:paddingLeft="10dp"
-                android:text="Quiero"
-                android:textAlignment="viewStart"
-                android:textColor="#3c4951"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_margin="0dp"
-                android:paddingLeft="10dp"
-                android:text="Necesito"
-                android:textAlignment="viewStart"
-                android:textColor="#3c4951"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_accept_event"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="  Descripción"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/linearLayout" />
 
         <Button
             android:id="@+id/button_accept_event"
@@ -100,20 +96,20 @@
             android:textColor="#FFFFFF" />
 
         <!--<android.support.design.widget.FloatingActionButton-->
-            <!--android:id="@+id/fab_add"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_marginBottom="15dp"-->
-            <!--android:layout_marginEnd="20dp"-->
-            <!--android:clickable="true"-->
-            <!--android:paddingLeft="0dp"-->
-            <!--app:elevation="10dp"-->
-            <!--app:fabSize="normal"-->
-            <!--app:srcCompat="@mipmap/ic_add_white_24dp"-->
-            <!--tools:layout_editor_absoluteX="16dp"-->
-            <!--tools:layout_editor_absoluteY="455dp" />-->
+        <!--android:id="@+id/fab_add"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:layout_marginEnd="20dp"-->
+        <!--android:clickable="true"-->
+        <!--android:paddingLeft="0dp"-->
+        <!--app:elevation="10dp"-->
+        <!--app:fabSize="normal"-->
+        <!--app:srcCompat="@mipmap/ic_add_white_24dp"-->
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="455dp" />-->
 
     </RelativeLayout>
 

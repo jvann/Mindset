@@ -12,29 +12,37 @@ public class Event {
     private String date;
     private String hour;
     private String name;
-    private int picture;
+    private String description;
+    private int duration;
+    private boolean completed;
 
     public Event() {
         this.id = 0;
         this.date = null;
         this.hour = null;
         this.name = null;
-        this.picture = 0;
+        this.description = null;
+        this.duration = 0;
+        this.completed = false;
     }
 
-    public Event (String date, String hour, String name, int picture) {
+    public Event (String date, String hour, String name, String description, int duration, boolean completed) {
         this.date = date;
         this.hour = hour;
         this.name = name;
-        this.picture = picture;
+        this.description = description;
+        this.duration = duration;
+        this.completed = completed;
     }
 
-    public Event (long id, String date, String hour, String name, int picture) {
+    public Event (long id, String date, String hour, String name, String description, int duration, boolean completed) {
         this.id = id;
         this.date = date;
         this.hour = hour;
         this.name = name;
-        this.picture = picture;
+        this.description = description;
+        this.duration = duration;
+        this.completed = completed;
     }
 
     public long getID() {
@@ -65,11 +73,29 @@ public class Event {
         this.name = name;
     }
 
-    public int getPicture() {
-        return picture;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPicture(int picture) {
-        this.picture = picture;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    public boolean getCompleted() {
+        return completed;
+    }
+
+
 }

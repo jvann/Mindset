@@ -36,31 +36,31 @@ public class MasterData {
         listEvents = new ArrayList<Event>();
 
         Event event;
-        event = new Event ("10/10/2017", "10pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Tarea", "Descripcion Tarea aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "11pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "11pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "12pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "12pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "1pm", "Meditar", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "1pm", "Meditar", "Descripcion aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "2pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "2pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "3pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "3pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "4pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "4pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "6pm", "Trabajo", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "6pm", "Trabajo", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Tarea", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", R.drawable.samplemeditation);
+        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
         listEvents.add(event);
     }
 

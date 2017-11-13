@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 /**
+ * Referenced: for Floating widget system alert window
  * Created by sonu on 28/03/17.
  */
 

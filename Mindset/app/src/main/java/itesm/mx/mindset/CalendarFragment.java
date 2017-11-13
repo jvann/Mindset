@@ -20,7 +20,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
 
     private ArrayList<Event> listEvents;
     private EventAdapter adapter;
-//    private EventsOperations dao;
+    private EventsOperations dao;
     private ListView listEvent;
     private View view;
 
@@ -48,8 +48,8 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
 
         view = inflater.inflate(R.layout.fragment_calendar, container, false);
 
-//        dao = new EventsOperations(this.getContext());//HERE POSSIBLE PROBLEM.
-//        dao.open();
+        dao = new EventsOperations(this.getContext());
+        dao.open();
 
         refreshView(view);
 
@@ -69,7 +69,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
 
     public void refreshView(View view) {
         listEvent = (ListView) view.findViewById(R.id.list_events);
-        listEvents = showProducts();
+        listEvents = dao.getAllEvents();
         listEvent.setOnItemClickListener(this);
         adapter = new EventAdapter(getContext(), listEvents);
         listEvent.setAdapter(adapter);
@@ -102,7 +102,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public void onResume() {
-//        dao.open();
+        dao.open();
         refreshView(view);
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
@@ -110,7 +110,7 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public void onPause() {
-//        dao.close();
+        dao.close();
         super.onPause();
         Log.d(DEBUG_TAG, "onPause() has been called.");
     }

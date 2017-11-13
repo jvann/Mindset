@@ -19,6 +19,7 @@ public class EventDetail extends AppCompatActivity {
     private ImageView ivPicture;
     private TextView tvNameElectro;
     private TextView tvDate;
+    private TextView tvDescription;
 
 //    private EventsOperations dao;
 
@@ -29,10 +30,9 @@ public class EventDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        ivPicture = (ImageView) findViewById(R.id.image_event_detail);
         tvNameElectro = (TextView) findViewById(R.id.text_detail_event);
         tvDate = (TextView) findViewById(R.id.text_event_date);
-
+        tvDescription = (TextView) findViewById(R.id.text_event_description);
 //        dao = new EventsOperations(this.getApplicationContext());
 //        dao.open();
 
@@ -46,9 +46,9 @@ public class EventDetail extends AppCompatActivity {
     }
 
     private void setViewDetail(int position) {
-        ivPicture.setImageResource(eventList.get(MasterData.getInstance().getEvent(eventList.get(position).getName())).getPicture());
         tvNameElectro.setText(eventList.get(position).getName());
         tvDate.setText(eventList.get(position).getDate() + "\n" + eventList.get(position).getHour());
+        tvDescription.setText(eventList.get(position).getDescription());
     }
 
 

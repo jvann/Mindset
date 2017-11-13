@@ -14,7 +14,7 @@
             android:id="@+id/image_event"
             android:layout_width="80dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/logomindset" />
+            app:srcCompat="@mipmap/ic_book_black_24dp" />
 
         <TextView
             android:id="@+id/tv_name_event"
