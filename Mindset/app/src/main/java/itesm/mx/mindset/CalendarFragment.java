@@ -75,17 +75,6 @@ public class CalendarFragment extends Fragment implements AdapterView.OnItemClic
         listEvent.setAdapter(adapter);
     }
 
-    public ArrayList<Event> showProducts() {
-
-        ArrayList<Event> eventList = MasterData.getInstance().getAllEvents();
-
-        if (eventList != null) {
-            return eventList;
-        } else {
-            return null;
-        }
-    }
-
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         OnItemClickedListener listener = (OnItemClickedListener) getActivity();

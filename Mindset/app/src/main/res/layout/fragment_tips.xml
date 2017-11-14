@@ -5,30 +5,13 @@
     android:layout_height="match_parent"
     tools:context="itesm.mx.mindset.TipsFragment">
 
-    <LinearLayout
+
+    <ListView
+        android:id="@+id/list_tips"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="455dp" />
 
-        <TextClock
-            android:id="@+id/textClock"
-            android:layout_width="match_parent"
-            android:layout_height="156dp"
-            android:paddingTop="60dp"
-            android:textAlignment="center"
-            android:textColor="#3c4951"
-            android:textSize="50sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintBaseline_creator="14"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="27dp" />
-
-        <WebView
-            android:id="@+id/webview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </FrameLayout>

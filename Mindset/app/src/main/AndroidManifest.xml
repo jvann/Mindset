@@ -40,7 +40,8 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".Assistant"></activity>
+        <activity android:name=".Assistant" />
+        <activity android:name=".TipDetail"></activity>
     </application>
 
 </manifest>

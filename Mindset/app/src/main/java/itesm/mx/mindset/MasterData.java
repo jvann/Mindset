@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MasterData {
     private static MasterData instance = null;
 
-    public static ArrayList<Event> listEvents;
+    public static ArrayList<Tip> listTips;
 
     private MasterData() {
 
@@ -33,47 +33,31 @@ public class MasterData {
 
     private void createData() {
 
-        listEvents = new ArrayList<Event>();
+        listTips = new ArrayList<Tip>();
 
-        Event event;
-        event = new Event ("10/10/2017", "10pm", "Tarea", "Descripcion Tarea aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "11pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "12pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "1pm", "Meditar", "Descripcion aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "2pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "3pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, true);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "4pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "6pm", "Trabajo", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Tarea", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
-        event = new Event ("10/10/2017", "10pm", "Proyecto", "Descripcion aqui", R.drawable.samplemeditation, false);
-        listEvents.add(event);
+        Tip tip;
+        tip = new Tip("Tip para diet", "Descripcion para diet", "diet", R.drawable.diethealth);
+        listTips.add(tip);
+        tip = new Tip("Tip para physical", "Descripcion para physical", "physical", R.drawable.physicalhealth);
+        listTips.add(tip);
+        tip = new Tip("Tip para mental", "Descripcion para mental", "mental", R.drawable.mentalhealth);
+        listTips.add(tip);
+        tip = new Tip("Tip para heart", "Descripcion para heart", "heart", R.drawable.hearthealth);
+        listTips.add(tip);
+        tip = new Tip("Tip para sleep", "Descripcion para sleep", "sleep", R.drawable.sleephealth);
+        listTips.add(tip);
     }
 
-    public ArrayList<Event> getAllEvents () {
-        return this.listEvents;
+    public ArrayList<Tip> getAllTips () {
+        return this.listTips;
     }
 
-    public Event getEvent(int index) { return listEvents.get(index); }
+    public Tip getTips(int index) { return listTips.get(index); }
 
-    public int getEvent(String name) {
+    public int getTips(String name) {
 
-        for (int i = 0; i < listEvents.size(); i++) {
-            if (listEvents.get(i).getName().equals(name)) {
+        for (int i = 0; i < listTips.size(); i++) {
+            if (listTips.get(i).getName().equals(name)) {
                 return i;
             }
         }

@@ -109,6 +109,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
         intent.putExtra("position", position);
         startActivity(intent);
     }
+
+    @Override
+    public void onTipSelected(int position) {
+        Log.d(DEBUG_TAG, "Position Event: " + position);
+
+        Intent intent = new Intent(MainActivity.this, TipDetail.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
+    }
     /**
      * A placeholder fragment containing a simple view.
      */
