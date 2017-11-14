@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.webkit.WebViewFragment;
 
 
 /**
@@ -18,7 +17,7 @@ import android.webkit.WebViewFragment;
 public class TipsFragment extends Fragment {
 
     private WebView myWebView;
-    private String url = "http://www.who.int/topics/nutrition/es/";
+    private String html = "<iframe width=\"300\" height=\"250\" src=\"https://www.youtube.com/embed/OMoRC1GmzVg\" frameborder=\"1\" allowfullscreen></iframe>";
 //    private String url = "https://www.youtube.com/watch?v=StkLx0e4f6c";
     private WebSettings myWebSettings;
 
@@ -42,7 +41,7 @@ public class TipsFragment extends Fragment {
         myWebSettings = myWebView.getSettings();
         myWebSettings.setJavaScriptEnabled(true);
         myWebView.setWebViewClient(new MyWebViewClient());
-        myWebView.loadUrl(url);
+        myWebView.loadData(html, "text/html", null);
 
         return rootView;
     }

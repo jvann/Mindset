@@ -9,8 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <TextClock
             android:id="@+id/textClock"
@@ -18,20 +18,30 @@
             android:layout_height="156dp"
             android:paddingTop="60dp"
             android:textAlignment="center"
+            android:textColor="#3c4951"
             android:textSize="50sp"
             android:textStyle="bold|italic"
-            android:textColor="#3c4951"
             app:layout_constraintBaseline_creator="14"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="27dp" />
 
-        <ImageView
-            android:id="@+id/image_meditation"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="268dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            app:srcCompat="@drawable/samplemeditation" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <WebView
+                android:id="@+id/webview_rest"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2.99" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </FrameLayout>
