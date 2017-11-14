@@ -77,9 +77,9 @@
         <item>3</item>
     </string-array>
 
-    <string name="create_floating_widget">Create Floating Widget</string>
-    <string name="floating_widget_label">Floating Widget Label</string>
-    <string name="floating_widget_details">Floating Widget Details</string>
+    <string name="create_floating_widget">Create Assistant</string>
+    <string name="floating_widget_label">Task</string>
+    <string name="floating_widget_details">Detail</string>
     <string name="draw_other_app_permission_denied">Draw over other app permission not available. App won\'t work without permission. Please try again.</string>
 
     <string-array name="multi_select_list_preference_default_value" />

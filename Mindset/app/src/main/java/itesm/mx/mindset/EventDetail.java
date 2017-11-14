@@ -7,19 +7,24 @@ package itesm.mx.mindset;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class EventDetail extends AppCompatActivity {
+public class EventDetail extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<Event> eventList;
+    private EventsOperations dao;
 
-    private ImageView ivPicture;
-    private TextView tvNameElectro;
+    private ImageView ivImage;
+    private TextView tvEvent;
     private TextView tvDate;
     private TextView tvDescription;
+    private Button btnDone;
 
 //    private EventsOperations dao;
 
@@ -30,27 +35,41 @@ public class EventDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        tvNameElectro = (TextView) findViewById(R.id.text_detail_event);
+        ivImage = (ImageView) findViewById(R.id.image_status);
+        tvEvent = (TextView) findViewById(R.id.text_detail_event);
         tvDate = (TextView) findViewById(R.id.text_event_date);
         tvDescription = (TextView) findViewById(R.id.text_event_description);
-//        dao = new EventsOperations(this.getApplicationContext());
-//        dao.open();
+        btnDone = (Button) findViewById(R.id.button_done_task);
 
-        eventList = MasterData.getInstance().getAllEvents();
+        dao = new EventsOperations(this.getApplicationContext());
+        dao.open();
+
+        eventList = dao.getAllEvents();
 
         Bundle data = getIntent().getExtras();
         if (data != null) {
             setViewDetail(data.getInt("position"));
         }
 
+        btnDone.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        //TODO: Change completed status here.
+        Toast.makeText(this, "Excelente!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     private void setViewDetail(int position) {
-        tvNameElectro.setText(eventList.get(position).getName());
-        tvDate.setText(eventList.get(position).getDate() + "\n" + eventList.get(position).getHour());
+
+        if (eventList.get(position).getCompleted())
+            ivImage.setImageResource(R.mipmap.ic_check_circle_black_24dp);
+
+        tvEvent.setText(eventList.get(position).getName());
+        tvDate.setText(eventList.get(position).getDate() + " - " + eventList.get(position).getHour());
         tvDescription.setText(eventList.get(position).getDescription());
     }
-
 
     @Override
     public void onStart() {
@@ -60,14 +79,14 @@ public class EventDetail extends AppCompatActivity {
 
     @Override
     public void onResume() {
-//        dao.open();
+        dao.open();
         super.onResume();
         Log.d(DEBUG_TAG, "onResume() has been called.");
     }
 
     @Override
     public void onPause() {
-//        dao.close();
+        dao.close();
         super.onPause();
         Log.d(DEBUG_TAG, "onPause() has been called.");
     }

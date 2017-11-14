@@ -60,34 +60,35 @@ public class EventsOperations {
 
     }
 
-//    public Event findEvent(String eventType) {
-//
-//        String query = "Select * FROM " +
-//                DataBaseSchema.EventsTable.TABLE_NAME +
-//                " WHERE " + DataBaseSchema.EventsTable.COLUMN_TYPE +
-//                " = \"" + eventType + "\"";
-//
-//        try {
-//            Cursor cursor = db.rawQuery(query, null);
-//            event = null;
-//            if (cursor.moveToFirst()) {
-//                event = new Event(
-//                        Integer.parseInt(cursor.getString(0)),
-//                        cursor.getString(1),
-//                        cursor.getString(2),
-//                        cursor.getString(3),
-//                        Integer.parseInt(cursor.getString(4)),
-//                        Integer.parseInt(cursor.getString(5))
-//                );
-//            }
-//            cursor.close();
-//
-//        }catch (SQLException e) {
-//            Log.e("SQLFIND", e.toString());
-//        }
-//
-//        return event;
-//    }
+    public Event findEvent(int position) {
+
+        String query = "Select * FROM " +
+                DataBaseSchema.EventsTable.TABLE_NAME +
+                " WHERE " + DataBaseSchema.EventsTable._ID +
+                " = \"" + position + "\"";
+
+        try {
+            Cursor cursor = db.rawQuery(query, null);
+            event = null;
+            if (cursor.moveToFirst()) {
+                event = new Event(
+                        Integer.parseInt(cursor.getString(0)),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        Integer.parseInt(cursor.getString(5)),
+                        Boolean.parseBoolean(cursor.getString(6))
+                );
+            }
+            cursor.close();
+
+        }catch (SQLException e) {
+            Log.e("SQLFIND", e.toString());
+        }
+
+        return event;
+    }
 
 //    public boolean deleteEvent(String eventName) {
 //
