@@ -36,15 +36,15 @@ public class MasterData {
         listTips = new ArrayList<Tip>();
 
         Tip tip;
-        tip = new Tip("Tip para diet", "Descripcion para diet", "diet", R.drawable.diethealth);
+        tip = new Tip("Nutrición", "Descripción para nutrición", "nutricion", R.drawable.diethealth);
         listTips.add(tip);
-        tip = new Tip("Tip para physical", "Descripcion para physical", "physical", R.drawable.physicalhealth);
+        tip = new Tip("Físico", "Descripción para el físico", "fisico", R.drawable.physicalhealth);
         listTips.add(tip);
-        tip = new Tip("Tip para mental", "Descripcion para mental", "mental", R.drawable.mentalhealth);
+        tip = new Tip("Salud mental", "Descripción para la salud mental", "mental", R.drawable.mentalhealth);
         listTips.add(tip);
-        tip = new Tip("Tip para heart", "Descripcion para heart", "heart", R.drawable.hearthealth);
+        tip = new Tip("No enfermar", "Descripción para no enfermar", "enfermedad", R.drawable.hearthealth);
         listTips.add(tip);
-        tip = new Tip("Tip para sleep", "Descripcion para sleep", "sleep", R.drawable.sleephealth);
+        tip = new Tip("Descanso", "Descripción para descanso", "descanso", R.drawable.sleephealth);
         listTips.add(tip);
     }
 

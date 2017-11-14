@@ -58,7 +58,6 @@ public class EventDetail extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        //TODO: Change completed status here.
         dao.updateStatusTask(position);
         Toast.makeText(this, "Excelente!", Toast.LENGTH_SHORT).show();
         finish();

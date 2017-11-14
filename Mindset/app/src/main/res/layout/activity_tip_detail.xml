@@ -16,9 +16,9 @@
     <ImageView
         android:id="@+id/image_tip_detail"
         android:layout_width="match_parent"
-        android:layout_height="141dp"
-        app:srcCompat="@drawable/samplemeditation_floating"
-        android:layout_weight="0.09" />
+        android:layout_height="135dp"
+        android:layout_weight="0.09"
+        app:srcCompat="@drawable/samplemeditation_floating" />
 
     <Space
         android:layout_width="match_parent"
@@ -37,21 +37,6 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/text_tip_description_static"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:text="Descripcion:"
-        android:textSize="16sp"
-        android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"
