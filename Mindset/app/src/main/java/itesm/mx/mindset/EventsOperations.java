@@ -23,6 +23,8 @@ public class EventsOperations {
     private EventDBHelper dbHelper;
     private Event event;
 
+    private static final String DEBUG_TAG = "EVENTSOPERATIONS";
+
     public EventsOperations (Context context) {
         dbHelper = new EventDBHelper(context);
     }
@@ -88,6 +90,28 @@ public class EventsOperations {
         }
 
         return event;
+    }
+
+    public boolean updateStatusTask(int position) {
+
+        position++;//Column row starts at 1.
+        Log.d(DEBUG_TAG, "Position: " + position);
+
+        String query = "UPDATE  " +
+                DataBaseSchema.EventsTable.TABLE_NAME +
+                " SET " + DataBaseSchema.EventsTable.COLUMN_COMPLETED + "='true'" +
+                " WHERE " + DataBaseSchema.EventsTable._ID +
+                " = \"" + position + "\"";
+
+        try {
+            Log.d(DEBUG_TAG, "Query: " + query);
+            db.execSQL(query);
+
+        }catch (SQLException e) {
+            Log.e("SQLFIND", e.toString());
+        }
+
+        return false;
     }
 
 //    public boolean deleteEvent(String eventName) {

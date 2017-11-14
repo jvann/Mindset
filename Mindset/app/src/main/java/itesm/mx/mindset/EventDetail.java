@@ -19,6 +19,7 @@ public class EventDetail extends AppCompatActivity implements View.OnClickListen
 
     private ArrayList<Event> eventList;
     private EventsOperations dao;
+    private int position;
 
     private ImageView ivImage;
     private TextView tvEvent;
@@ -48,6 +49,7 @@ public class EventDetail extends AppCompatActivity implements View.OnClickListen
 
         Bundle data = getIntent().getExtras();
         if (data != null) {
+            position = data.getInt("position");
             setViewDetail(data.getInt("position"));
         }
 
@@ -57,6 +59,7 @@ public class EventDetail extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         //TODO: Change completed status here.
+        dao.updateStatusTask(position);
         Toast.makeText(this, "Excelente!", Toast.LENGTH_SHORT).show();
         finish();
     }
