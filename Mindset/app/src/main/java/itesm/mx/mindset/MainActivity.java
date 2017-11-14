@@ -60,7 +60,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, EventActivity.class);
-//                Intent intent = new Intent(MainActivity.this, Assistant.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab_assitant = (FloatingActionButton) findViewById(R.id.fab_assitant);
+        fab_assitant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Assistant.class);
                 startActivity(intent);
             }
         });

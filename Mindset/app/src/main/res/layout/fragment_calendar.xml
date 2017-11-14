@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:weightSum="1">
 
         <!--<CalendarView-->
             <!--android:id="@+id/calendarView"-->
@@ -30,7 +31,8 @@
         <ListView
             android:id="@+id/list_events"
             android:layout_width="match_parent"
-            android:layout_height="439dp" />
+            android:layout_height="345dp"
+            android:layout_weight="0.21" />
     </LinearLayout>
 
 </FrameLayout>
