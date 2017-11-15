@@ -42,7 +42,7 @@ public class MasterData {
         listTips.add(tip);
         tip = new Tip("Salud mental", "Descripción para la salud mental", "mental", R.drawable.mentalhealth);
         listTips.add(tip);
-        tip = new Tip("No enfermar", "Descripción para no enfermar", "enfermedad", R.drawable.hearthealth);
+        tip = new Tip("Salud", "Descripción para cuidar de tu salud", "salud", R.drawable.hearthealth);
         listTips.add(tip);
         tip = new Tip("Descanso", "Descripción para descanso", "descanso", R.drawable.sleephealth);
         listTips.add(tip);
