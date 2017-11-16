@@ -36,15 +36,18 @@ public class MasterData {
         listTips = new ArrayList<Tip>();
 
         Tip tip;
-        tip = new Tip("Nutrición", "Descripción para nutrición", "nutricion", R.drawable.diethealth);
+        tip = new Tip("Nutrición", " Una alimentación balanceada te permite cumplir tus antojos de vez en cuando. \n" +
+                "Es importante incluir alimentos que nutran el cuerpo para tener una vida armoniosa.", "nutricion", R.drawable.diethealth);
         listTips.add(tip);
-        tip = new Tip("Físico", "Descripción para el físico", "fisico", R.drawable.physicalhealth);
+        tip = new Tip("Físico", "Consistencia es la clave para el\n" +
+                "Éxito! No te rindas y dedica tiempo a mantener tu cuerpo saludable. Mínimo 30 minutos diarios.", "fisico", R.drawable.physicalhealth);
         listTips.add(tip);
-        tip = new Tip("Salud mental", "Descripción para la salud mental", "mental", R.drawable.mentalhealth);
+        tip = new Tip("Salud mental", "Enfócate en ti y en como te sientes, si eres feliz, \nsi vas siendo mejor persona, y si te sientes pleno contigo mismo.", "mental", R.drawable.mentalhealth);
         listTips.add(tip);
-        tip = new Tip("Salud", "Descripción para cuidar de tu salud", "salud", R.drawable.hearthealth);
+        tip = new Tip("Salud", "Recuerda siempre cuidarte a ti mismo en todos los aspectos para cuidar de tu salud.", "salud", R.drawable.hearthealth);
         listTips.add(tip);
-        tip = new Tip("Descanso", "Descripción para descanso", "descanso", R.drawable.sleephealth);
+        tip = new Tip("Descanso", "El descanso es fundamental para el balance de la vida. \n" +
+                "Descansar el tiempo adecuado, quema calorías, regenera células y mantiene tu piel Fresca y sana.", "descanso", R.drawable.sleephealth);
         listTips.add(tip);
     }
 
