@@ -77,10 +77,10 @@
         <item>3</item>
     </string-array>
 
-    <string name="create_floating_widget">Crear Asistente</string>
-    <string name="floating_widget_label">Task</string>
-    <string name="floating_widget_details">Detail</string>
-    <string name="draw_other_app_permission_denied">Draw over other app permission not available. App won\'t work without permission. Please try again.</string>
+    <string name="create_floating_widget">Yogi</string>
+    <string name="floating_widget_label">Tarea</string>
+    <string name="floating_widget_details">Tarea de Emprendimiento</string>
+    <string name="draw_other_app_permission_denied"></string>
 
     <string-array name="multi_select_list_preference_default_value" />
 

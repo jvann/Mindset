@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
     public static final boolean flag = true;
-    private static String DEBUG_TAG = "MAIN_ACTIVITY";
+    private static final String DEBUG_TAG = "MAIN_ACTIVITY";
+
+    private static boolean flagDailyQuestion = true;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -73,8 +75,14 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
             }
         });
 
-//        Intent intent = new Intent(this, LoginActivity.class);
-//        startActivity(intent);
+        if (flagDailyQuestion) {
+            flagDailyQuestion = false;
+            Intent intent = new Intent(this, DailyQuestion.class);
+            startActivity(intent);
+        }
+
+        Log.d(DEBUG_TAG, "flagDailyQuestion: " + flagDailyQuestion);
+
     }
 
     @Override

@@ -41,7 +41,8 @@
             android:exported="false" />
 
         <activity android:name=".Assistant" />
-        <activity android:name=".TipDetail"></activity>
+        <activity android:name=".TipDetail" />
+        <activity android:name=".DailyQuestion"></activity>
     </application>
 
 </manifest>
