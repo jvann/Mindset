@@ -29,13 +29,14 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="238dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="57dp"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -59,7 +60,7 @@
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     android:hint="@string/prompt_password"
                     android:imeActionId="@+id/login"
                     android:imeActionLabel="@string/action_sign_in_short"
@@ -70,6 +71,10 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
@@ -77,11 +82,42 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="#84daf4"
+                android:textColor="@android:color/white"
                 android:elevation="15dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="80dp"
+            android:layout_weight="0.18" />
+
+        <ImageView
+            android:id="@+id/image_google"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/googlelogin" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="80dp"
+            android:layout_weight="0.18" />
+
+        <ImageView
+            android:id="@+id/image_facebook"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.08"
+            app:srcCompat="@drawable/facebooklogin" />
+    </LinearLayout>
 
 </LinearLayout>
