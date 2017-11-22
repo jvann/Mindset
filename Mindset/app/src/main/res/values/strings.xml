@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Mindset</string>
-    <string name="action_settings">Ajustes</string>
+    <string name="action_settings">Salir</string>
     <string name="title_activity_login">Accesar</string>
 
     <!-- Strings related to login -->

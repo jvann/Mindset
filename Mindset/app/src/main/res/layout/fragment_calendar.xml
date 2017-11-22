@@ -5,7 +5,7 @@
     tools:context="itesm.mx.mindset.CalendarFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#FFFFFF"
@@ -28,10 +28,59 @@
             <!--android:textColor="#3c4951"-->
             <!--android:textSize="22sp"-->
             <!--android:textStyle="bold" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:hint="Ingresa Nombre/Fecha"
+                android:textColor="@color/colorTextToolbar" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.18"
+                android:background="@color/colorPrimary"
+                android:text="Buscar"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.06" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actividades"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.06" />
+
         <ListView
             android:id="@+id/list_events"
             android:layout_width="match_parent"
-            android:layout_height="455dp" />
+            android:layout_height="225dp"
+            android:layout_weight="0.53" />
+
     </LinearLayout>
 
 </FrameLayout>

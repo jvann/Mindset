@@ -32,6 +32,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -202,7 +203,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (chkBoxRegister.isChecked()) {
                 Log.d("CHECKBOX", "Checked? " + chkBoxRegister.isChecked());
-                addUser(email, password);
+                if (!addUser(email, password))
+                {
+                    Toast.makeText(this, "Usuario ya existente, Ingresando con " + email, Toast.LENGTH_LONG).show();
+                }
             }
             user = uDao.findUser(email);
             if (user != null) {
@@ -221,13 +225,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-    private void addUser(String email, String password) {
+    private boolean addUser(String email, String password) {
         if (uDao.findUser(email) == null) {
             User userAdd = new User(email, password);
             uDao.addUser(userAdd);
+            return true;
         } else {
             Log.e("USERADD", "User already exists");
         }
+
+        return false;
     }
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
