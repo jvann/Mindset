@@ -3,7 +3,9 @@ package itesm.mx.mindset;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.SQLException;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +29,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -62,13 +66,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+    private UsersOperations uDao;
+
+    private CheckBox chkBoxRegister;
+
+    private User user = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+
+        uDao = new UsersOperations(this);
+        uDao.open();
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+        chkBoxRegister = (CheckBox) findViewById(R.id.checkBox);
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -137,7 +151,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-
+    public void startActMain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
@@ -182,17 +199,39 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+
+            if (chkBoxRegister.isChecked()) {
+                Log.d("CHECKBOX", "Checked? " + chkBoxRegister.isChecked());
+                addUser(email, password);
+            }
+            user = uDao.findUser(email);
+            if (user != null) {
+                // Show a progress spinner, and kick off a background task to
+                // perform the user login attempt.
+                Log.d("CHECKBOX", "Checked? " + chkBoxRegister.isChecked());
+                showProgress(true);
+                mAuthTask = new UserLoginTask(user.getUsername(), user.getPassword());
+                mAuthTask.execute((Void) null);
+            } else {
+                Log.e("UserNotFound", "User " + email + " not found");
+                mEmailView.setError("Usuario no existente");
+                focusView = mEmailView;
+                focusView.requestFocus();
+            }
         }
     }
 
+    private void addUser(String email, String password) {
+        if (uDao.findUser(email) == null) {
+            User userAdd = new User(email, password);
+            uDao.addUser(userAdd);
+        } else {
+            Log.e("USERADD", "User already exists");
+        }
+    }
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return email.contains("");
     }
 
     private boolean isPasswordValid(String password) {
@@ -315,16 +354,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
+            Log.d("LOGIN", user.getUsername().toString());
+
+            if (mEmail.equals(user.getUsername()) && mPassword.equals(user.getPassword())) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
+                    return true;
             }
 
             // TODO: register the new account here.
-            return true;
+            return false;
         }
 
         @Override
@@ -333,6 +371,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                startActMain();
+                Log.d("LOGIN", "onPostExecute");
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
@@ -345,6 +385,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+    }
+
+
+    @Override
+    public void onResume() {
+        uDao.open();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        uDao.close();
+        super.onPause();
     }
 }
 

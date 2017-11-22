@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickedList
             flagDailyQuestion = false;
             Intent intent = new Intent(this, DailyQuestion.class);//Daily question
             startActivity(intent);
-            Intent intentLog = new Intent(this, LoginActivity.class);//Login
-            startActivity(intentLog);
+//            Intent intentLog = new Intent(this, LoginActivity.class);//Login
+//            startActivity(intentLog);
         }
 
         Log.d(DEBUG_TAG, "flagDailyQuestion: " + flagDailyQuestion);

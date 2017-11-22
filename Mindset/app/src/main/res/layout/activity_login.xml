@@ -29,7 +29,7 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="238dp">
+        android:layout_height="267dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -73,7 +73,18 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="17dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Registrase"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/email_sign_in_button"
@@ -82,10 +93,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="#84daf4"
-                android:textColor="@android:color/white"
                 android:elevation="15dp"
                 android:text="@string/action_sign_in"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="9dp" />
 
         </LinearLayout>
     </ScrollView>

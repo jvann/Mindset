@@ -20,4 +20,10 @@ public class DataBaseSchema {
         public static final String COLUMN_COMPLETED = "completed";
     }
 
+    public static class UsersTable implements BaseColumns {
+        public static final String TABLE_NAME = "Users";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_PASSWORD = "password";
+    }
+
 }
